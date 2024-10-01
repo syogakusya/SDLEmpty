@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(SDLProject)
+
+if(WIN32)
+    set(SDL2_DIR "C:/SDL2")
+endif()
+
+# SDLパッケージの検索
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
+
+# 実行可能ファイルの追加
+add_executable(SDLApp src/main.c)
+target_link_libraries(SDLApp ${SDL2_LIBRARIES})
+
+if(WIN32)
+    add_custom_command(TARGET SDLApp POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${SDL2_DIR}/lib/x64/SDL2.dll"
+        $<TARGET_FILE_DIR:SDLApp>)
+endif()

@@ -1,0 +1,40 @@
+# ビルドディレクトリ
+/build/
+
+# CMakeの生成ファイル
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# コンパイル済みオブジェクトファイル
+*.o
+*.obj
+
+# 実行可能ファイル
+*.exe
+SDLApp
+
+# macOS固有のファイル
+.DS_Store
+
+# Windowsのサムネイルキャッシュ
+Thumbs.db
+
+# コンパイラの中間ファイル
+*.dSYM/
+
+.vscode/
+
+# CMakeのビルドディレクトリ
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# SDL2のDLLファイル（Windowsの場合）
+SDL2.dll
